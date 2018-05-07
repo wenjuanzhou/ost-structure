@@ -1,3 +1,3 @@
 module.exports = {
-  tree: require('./libs/tree')
+  Tree: require('./libs/Tree')
 };
