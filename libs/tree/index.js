@@ -1,8 +1,8 @@
 const Node = require('./node');
 
 class Tree {
-  constructor(id) {
-    this._root = new Node(id);
+  constructor(id, payload) {
+    this._root = new Node(id, payload);
   }
 
   traverseDF(callback) {
@@ -18,8 +18,8 @@ class Tree {
     this[traverse] ? this[traverse](callback) : console.error('A non-existent function');
   }
 
-  add(id, parentId, traverse) {
-    const childNode = new Node(id);
+  add({id, parentId, traverse, payLoad}) {
+    const childNode = new Node(id, payLoad);
     let _parentNode,
       callback = function (node) {
         if (node.id === parentId) {
@@ -34,6 +34,7 @@ class Tree {
       console.error('Cannot add node to a non-existent parent');
     }
   }
+
 }
 
 module.exports = Tree;
