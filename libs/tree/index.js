@@ -34,7 +34,6 @@ class Tree {
       console.error('Cannot add node to a non-existent parent');
     }
   }
-
 }
 
 module.exports = Tree;
